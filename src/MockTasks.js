@@ -1,0 +1,1 @@
+export const mock=["Correr", "Lavar la ropa", "Estudiar react"]

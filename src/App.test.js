@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import {App} from './App';
+import {mock} from "./MockTasks";
 
-test('renders learn react link', () => {
+test('renders header', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const header = screen.getByText("Lista de tareas");
+  expect(header).toBeInTheDocument();
+});
+
+
+test('renders tareas', () => {
+  render(<App />);
+  const tasks = screen.getByText(mock[0]);
+  expect(tasks).toBeInTheDocument();
 });
